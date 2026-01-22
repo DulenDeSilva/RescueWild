@@ -44,14 +44,12 @@ dd(Auth::user())
           </div>
         </div>
       </nav>
-      <br>
-      <br>
-        <div class="container-fluid content animated-img">
+        <div class="container-fluid content animated-img hero-section">
           <h1>WELCOME TO RESCUEWILD.LK</h1>
           <p>We are here to ensure their lives</p>
         </div>
        
-      <div class="container-fluid mt-5 pt-5 custom-container" id="about-us">
+      <div class="container-fluid mt-5 pt-5 custom-container section-block" id="about-us">
         <div class="row mt-5">
           <div class="col-md-6">
             <img src="collage.jpg" class="img-fluid custom-img animated-img" alt="Responsive image">
@@ -67,11 +65,7 @@ dd(Auth::user())
           </div>
         </div>
       </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="container-fluid mt-5 pb-5" id="video-slider">
+      <div class="container-fluid mt-5 pb-5 section-block" id="video-slider">
     <h2 class="text-center mb-4 text-white">Our Rescue Stories</h2>
     <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -123,11 +117,7 @@ dd(Auth::user())
         </button>
     </div>
 </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="container-fluid mt-5">
+      <div class="container-fluid mt-5 home-cards section-block">
         <div class="row">
           <div class="col-md-4">
             <div class="card">
@@ -158,10 +148,6 @@ dd(Auth::user())
           </div>
         </div>
       </div>
-      <br>
-      <br>
-      <br>
-      <br>
       <footer class="footer text-center fade-in" >
         <div class="container">
             <div class="row">

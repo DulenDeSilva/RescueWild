@@ -16,6 +16,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     line-height: 1.6;
+    padding-top: 5rem;
+    overflow-x: hidden;
+    animation: pageReveal 0.9s ease both;
 }
 
 .navbar {
@@ -23,6 +26,8 @@ body {
     height: 5em;
     border-bottom: 1px solid rgba(241, 231, 215, 0.15);
     backdrop-filter: blur(8px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 30px rgba(6, 20, 18, 0.25);
 }
 
 .nav-link {
@@ -33,14 +38,33 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 6px;
+    height: 2px;
+    background: var(--color-clay);
+    border-radius: 999px;
+    opacity: 0;
+    transform: scaleX(0.6);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
 .nav-link:hover {
     color: var(--color-cream);
     background-color: rgba(241, 231, 215, 0.12);
     border-radius: var(--radius-pill);
 }
 
+.nav-link:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
 .navbar-brand {
-    font-size: 30px;
+    font-size: clamp(22px, 4vw, 30px);
     font-weight: 700;
     font-family: var(--font-heading);
     color: var(--color-cream);
@@ -71,6 +95,11 @@ body {
     gap: 0.5rem;
 }
 
+.hero-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 .content h1 {
     font-size: clamp(2.5rem, 6vw, 4.8rem);
     font-weight: 700;
@@ -78,6 +107,7 @@ body {
     font-family: var(--font-heading);
     text-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     letter-spacing: 1.5px;
+    animation: pageReveal 0.9s ease both;
 }
 
 .content p {
@@ -96,7 +126,6 @@ body {
     background: linear-gradient(120deg, rgba(16, 42, 44, 0.65), rgba(15, 61, 62, 0.3));
     border-radius: var(--radius-card);
     padding: 3.5rem 3rem;
-    margin: 0 5vw;
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(10px);
@@ -122,6 +151,12 @@ body {
 .custom-img {
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.custom-container:hover .custom-img {
+    transform: scale(1.02);
+    box-shadow: 0 18px 40px rgba(6, 20, 18, 0.35);
 }
 
 @keyframes fadeUp {
@@ -188,6 +223,7 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-card);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 
 .card-title {
@@ -216,13 +252,19 @@ body {
     background: linear-gradient(120deg, rgba(15, 61, 62, 0.85), rgba(16, 42, 44, 0.6));
     padding: 60px 0;
     border-radius: var(--radius-card);
-    margin: 0 5vw;
     box-shadow: var(--shadow-soft);
 }
 
 #video-slider video {
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
+    width: min(900px, 90vw);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#video-slider video:hover {
+    transform: scale(1.01);
+    box-shadow: 0 18px 40px rgba(6, 20, 18, 0.35);
 }
 
 /* Custom Video Dimensions */
@@ -277,23 +319,47 @@ body {
     letter-spacing: 0.8px;
 }
 
+.section-block {
+    width: min(1200px, 92vw);
+    margin: clamp(2.5rem, 7vw, 5rem) auto;
+    animation: pageReveal 0.9s ease both;
+}
+
+.home-cards .row {
+    row-gap: 2rem;
+}
+
+.home-cards .card {
+    height: 100%;
+}
+
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
     }
 
     .content {
-        height: 60vh;
+        height: auto;
+        min-height: 55vh;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .section-block {
+        width: min(100%, 92vw);
+        margin: clamp(2rem, 8vw, 3.5rem) auto;
     }
 
     .custom-container {
-        margin: 0 1.5rem;
         padding: 2.5rem 1.5rem;
     }
 
     #video-slider {
-        margin: 0 1.5rem;
         padding: 40px 0;
+    }
+
+    #video-slider video {
+        width: 100%;
     }
 
     .card-img-top {

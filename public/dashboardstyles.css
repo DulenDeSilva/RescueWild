@@ -63,14 +63,19 @@
 
 /* Card Styles */
 .card {
-    margin-right: auto;
-    margin-left: auto;
-    width: min(600px, 92vw);
+    width: 100%;
+    max-width: 600px;
     background-color: rgba(251, 247, 240, 0.9);
     border-radius: var(--radius-card);
     border: 1px solid rgba(16, 42, 44, 0.15);
     box-shadow: var(--shadow-card);
     animation: riseIn 0.6s ease both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(6, 20, 18, 0.28);
 }
 
 .card-header {
@@ -86,13 +91,17 @@
     border-radius: var(--radius-pill);
     padding: 0.5rem 1.4rem;
     box-shadow: 0 10px 22px rgba(196, 107, 74, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .btn:hover {
     background-color: #b95f42;
     transform: translateY(-1px);
     box-shadow: 0 12px 26px rgba(196, 107, 74, 0.35);
+}
+
+.btn:active {
+    transform: translateY(1px);
 }
 
 .btn.btn-success {
@@ -130,6 +139,7 @@
     width: 100%;
     position: relative;
     padding: 3rem 0 5rem;
+    animation: pageReveal 0.8s ease both;
 }
 
 /* Styling the Text on Background */

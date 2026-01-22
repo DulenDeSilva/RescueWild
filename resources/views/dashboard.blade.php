@@ -125,8 +125,8 @@
                             <div class="row d-flex  justify-content-center">
 
                                 @foreach($complaints as $complaint)
-                                        <div class="col-4">
-                                        <div class="card mt-3"  style="width: 350px;">
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="card mt-3">
                                         <div class="card-body">
                                             <p><strong>Complaint ID:</strong> {{ $complaint->id }}</p>
                                             <p><strong>Client ID:</strong> {{ $complaint->client_id }}</p>
