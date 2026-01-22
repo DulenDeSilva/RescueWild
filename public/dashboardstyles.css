@@ -1,0 +1,135 @@
+/* Navbar Styles */
+.navbar {
+    background-color: rgb(85, 148, 150);
+    height: 5em;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold; 
+}
+
+.navbar-nav .nav-link {
+    color: rgb(56, 56, 56);
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: black;
+    background-color: rgb(118, 117, 117);
+    border-radius: 100px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100vh;
+    padding-top: 20px;
+    background-color: rgb(108, 198, 201);
+}
+
+.sidebar .nav-link {
+    color: #000000;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgb(60, 114, 116);
+    border-radius: 20px;
+}
+
+/* Main Content Styles */
+.content-section {
+    margin-top: 30px;
+}
+
+/* Card Styles */
+.card {
+    margin-right: auto;
+    margin-left: auto;
+    width: 600px;
+    background-color: rgba(227, 227, 227, 0.5);
+    border-radius: 10px;
+    border: 2px black solid;  
+}
+
+/* Button Styles */
+.btn {
+    background-color: rgb(108, 198, 201);
+    border: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(85, 148, 150);
+}
+
+/* Heading Center Alignment */
+.heading {
+    justify-content: center;
+    display: flex;
+}
+
+/* Background Image for Dashboard */
+/* .bg-image {
+    background-image: url('eric-ward-ISg37AI2A-s-unsplash.jpg');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    padding: 50px 0;
+    color: rgb(252, 252, 252);
+    min-height: 80vh; 
+} */
+.bg-image {
+    /* Set the background image */
+    background-image: url('eric-ward-ISg37AI2A-s-unsplash.jpg'); /* Replace with your image path */
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This makes the background fixed */
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    
+}
+
+
+
+/* Styling the Text on Background */
+.bg-image h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.bg-image p {
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+/* Complaint Form Section */
+#complaintForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#complaintForm .card-header {
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+
+    .bg-image h2 {
+        font-size: 2rem;
+    }
+
+    .bg-image p {
+        font-size: 1rem;
+    }
+}
+
+
+

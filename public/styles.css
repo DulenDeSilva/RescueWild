@@ -1,0 +1,191 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('eric-ward-ISg37AI2A-s-unsplash.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.navbar {
+    background-color: cadetblue;
+    height: 5em;
+}
+
+.nav-link {
+    color: rgb(56, 56, 56);
+    font-weight: 500px;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: rgb(157, 159, 159);
+    border-radius: 100px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.offcanvas-header {
+    background-color: black;
+}
+
+.offcanvas-title {
+    color: #fff;
+}
+
+.btn-close {
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 600px;
+}
+.content h1 {
+    font-size: 5em;
+    font-weight: bold;
+    color: rgb(242, 244, 247);
+    font-family: Bahnschrift SemiBold, sans-serif;
+}
+.content p {
+    font-size: 2em;
+    color: rgb(184, 234, 245);
+}
+
+.img-fluid {
+    height: 400px;
+    width: 100%;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.animated-img {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-text {
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.welcome-description {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.footer {
+    background-color: cadetblue;
+    padding: 2rem 0;
+}
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.footer a {
+    color: #000;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer .social-icons a {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Video Slider Section Styling */
+#video-slider {
+    background-color: rgba(143, 139, 139, 0.5); /* Semi-transparent background */
+    padding: 50px 0;
+}
+
+/* Custom Video Dimensions */
+.custom-video {
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+/* Custom Carousel Controls */
+.custom-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 0.3s ease;
+}
+
+.custom-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Positioning the Previous Button to the Left */
+.carousel-control-prev.custom-control {
+    left: 10px;
+}
+
+/* Positioning the Next Button to the Right */
+.carousel-control-next.custom-control {
+    right: 10px;
+}
+
+/* Remove Bootstrap's Default Control Icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none;
+}
+
+/* Optional: Adjust the Heading Color for Better Visibility */
+#video-slider h2 {
+    color: #fff;
+}
