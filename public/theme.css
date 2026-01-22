@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+:root {
+    --color-ink: #102a2c;
+    --color-forest: #0f3d3e;
+    --color-moss: #4f7a67;
+    --color-clay: #c46b4a;
+    --color-sand: #f1e7d7;
+    --color-cream: #fbf7f0;
+    --color-mist: #a5c3be;
+    --color-night: #0b1c1b;
+    --shadow-soft: 0 18px 45px rgba(6, 20, 18, 0.25);
+    --shadow-card: 0 12px 30px rgba(11, 28, 27, 0.25);
+    --radius-card: 18px;
+    --radius-pill: 999px;
+    --font-heading: "Fraunces", "Times New Roman", serif;
+    --font-body: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-sand);
+    background: radial-gradient(1000px 600px at 10% -10%, rgba(196, 107, 74, 0.22), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(79, 122, 103, 0.18), transparent 55%),
+        linear-gradient(140deg, #0f3d3e 0%, #102a2c 45%, #0b1c1b 100%);
+    min-height: 100vh;
+}
+
+body.text-gray-900 {
+    color: var(--color-sand);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.theme-title {
+    font-family: var(--font-heading);
+    letter-spacing: 0.3px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.theme-root.bg-gray-100 {
+    background: transparent;
+}
+
+.theme-root .bg-white {
+    background-color: var(--color-cream);
+}
+
+.theme-root .bg-gray-50 {
+    background-color: #f7efe4;
+}
+
+.theme-root .bg-gray-800 {
+    background-color: var(--color-forest);
+}
+
+.theme-root .bg-gray-700 {
+    background-color: #1a4c4b;
+}
+
+.theme-root .bg-gray-900 {
+    background-color: var(--color-night);
+}
+
+.theme-root .text-gray-900,
+.theme-root .text-gray-800,
+.theme-root .text-gray-700 {
+    color: var(--color-ink);
+}
+
+.theme-root .text-gray-600 {
+    color: #3f5e5a;
+}
+
+.theme-root .text-gray-500 {
+    color: #4a6a67;
+}
+
+.theme-root .text-indigo-600,
+.theme-root .text-indigo-700 {
+    color: var(--color-clay);
+}
+
+.theme-root .border-gray-300 {
+    border-color: rgba(16, 42, 44, 0.25);
+}
+
+.theme-root .border-gray-200 {
+    border-color: rgba(16, 42, 44, 0.18);
+}
+
+.theme-root .border-indigo-400 {
+    border-color: var(--color-clay);
+}
+
+.theme-root .focus\:border-indigo-700:focus {
+    border-color: var(--color-clay);
+}
+
+.theme-root .focus\:ring-indigo-500:focus {
+    --tw-ring-color: rgba(196, 107, 74, 0.55);
+}
+
+.theme-root .shadow,
+.theme-root .shadow-sm,
+.theme-root .shadow-md {
+    box-shadow: var(--shadow-soft);
+}
+
+.theme-root input,
+.theme-root textarea,
+.theme-root select {
+    background-color: rgba(251, 247, 240, 0.92);
+    border: 1px solid rgba(16, 42, 44, 0.22);
+    border-radius: 12px;
+}
+
+.theme-root input:focus,
+.theme-root textarea:focus,
+.theme-root select:focus {
+    border-color: var(--color-clay);
+    box-shadow: 0 0 0 3px rgba(196, 107, 74, 0.2);
+}
+
+.theme-root .hover\:bg-gray-700:hover {
+    background-color: #1a4c4b;
+}
+
+.theme-root .hover\:bg-gray-100:hover,
+.theme-root .focus\:bg-gray-100:focus {
+    background-color: rgba(241, 231, 215, 0.18);
+}
+
+.theme-root .hover\:bg-gray-50:hover {
+    background-color: #f3e7d8;
+}
+
+.theme-root .hover\:text-gray-700:hover {
+    color: #1a4c4b;
+}
+
+.theme-root .focus\:text-gray-700:focus {
+    color: #1a4c4b;
+}
+
+.theme-root .text-sm {
+    letter-spacing: 0.2px;
+}

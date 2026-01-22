@@ -1,38 +1,47 @@
+@import url('theme.css');
+
 /* Navbar Styles */
 .navbar {
-    background-color: rgb(85, 148, 150);
+    background: rgba(11, 28, 27, 0.9);
     height: 5em;
+    border-bottom: 1px solid rgba(241, 231, 215, 0.12);
+    backdrop-filter: blur(8px);
 }
 
 .navbar-brand {
     font-size: 30px;
-    font-weight: bold; 
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--color-cream);
+    letter-spacing: 0.4px;
 }
 
 .navbar-nav .nav-link {
-    color: rgb(56, 56, 56);
+    color: var(--color-sand);
     font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: black;
-    background-color: rgb(118, 117, 117);
-    border-radius: 100px;
+    color: var(--color-cream);
+    background-color: rgba(241, 231, 215, 0.12);
+    border-radius: var(--radius-pill);
 }
 
 /* Sidebar Styles */
 .sidebar {
     height: 100vh;
     padding-top: 20px;
-    background-color: rgb(108, 198, 201);
+    background: linear-gradient(180deg, rgba(15, 61, 62, 0.95), rgba(11, 28, 27, 0.92));
+    border-right: 1px solid rgba(241, 231, 215, 0.12);
 }
 
 .sidebar .nav-link {
-    color: #000000;
+    color: var(--color-sand);
 }
 
 .sidebar .nav-link:hover {
-    background-color: rgb(60, 114, 116);
+    background-color: rgba(241, 231, 215, 0.12);
     border-radius: 20px;
 }
 
@@ -41,25 +50,67 @@
     margin-top: 30px;
 }
 
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Card Styles */
 .card {
     margin-right: auto;
     margin-left: auto;
-    width: 600px;
-    background-color: rgba(227, 227, 227, 0.5);
-    border-radius: 10px;
-    border: 2px black solid;  
+    width: min(600px, 92vw);
+    background-color: rgba(251, 247, 240, 0.9);
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(16, 42, 44, 0.15);
+    box-shadow: var(--shadow-card);
+    animation: riseIn 0.6s ease both;
+}
+
+.card-header {
+    font-family: var(--font-heading);
+    letter-spacing: 0.4px;
 }
 
 /* Button Styles */
 .btn {
-    background-color: rgb(108, 198, 201);
+    background-color: var(--color-clay);
     border: none;
-    color: white;
+    color: var(--color-cream);
+    border-radius: var(--radius-pill);
+    padding: 0.5rem 1.4rem;
+    box-shadow: 0 10px 22px rgba(196, 107, 74, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
-    background-color: rgb(85, 148, 150);
+    background-color: #b95f42;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(196, 107, 74, 0.35);
+}
+
+.btn.btn-success {
+    background-color: #2f7d63;
+    box-shadow: 0 10px 22px rgba(47, 125, 99, 0.25);
+}
+
+.btn.btn-success:hover {
+    background-color: #296e57;
+}
+
+.btn.btn-danger {
+    background-color: #b8483d;
+    box-shadow: 0 10px 22px rgba(184, 72, 61, 0.25);
+}
+
+.btn.btn-danger:hover {
+    background-color: #a14036;
 }
 
 /* Heading Center Alignment */
@@ -69,40 +120,31 @@
 }
 
 /* Background Image for Dashboard */
-/* .bg-image {
-    background-image: url('eric-ward-ISg37AI2A-s-unsplash.jpg');
-    background-size: contain; 
-    background-repeat: no-repeat;
-    background-position: center; 
-    padding: 50px 0;
-    color: rgb(252, 252, 252);
-    min-height: 80vh; 
-} */
 .bg-image {
-    /* Set the background image */
-    background-image: url('eric-ward-ISg37AI2A-s-unsplash.jpg'); /* Replace with your image path */
-    
+    background-image: linear-gradient(120deg, rgba(11, 28, 27, 0.75), rgba(16, 42, 44, 0.6)),
+        url('eric-ward-ISg37AI2A-s-unsplash.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* This makes the background fixed */
-    height: 100vh;
+    background-attachment: fixed;
+    min-height: 100vh;
     width: 100%;
     position: relative;
-    
+    padding: 3rem 0 5rem;
 }
-
-
 
 /* Styling the Text on Background */
 .bg-image h2 {
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #000000;
+    font-weight: 700;
+    color: var(--color-cream);
+    font-family: var(--font-heading);
+    letter-spacing: 0.6px;
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
 .bg-image p {
-    font-size: 1.2rem;
-    color: #000000;
+    font-size: 1.1rem;
+    color: var(--color-mist);
 }
 
 /* Complaint Form Section */
@@ -113,13 +155,14 @@
 }
 
 #complaintForm .card-header {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .card {
-        width: 90%;
+    .bg-image {
+        background-attachment: scroll;
+        padding: 2rem 0 4rem;
     }
 
     .bg-image h2 {
