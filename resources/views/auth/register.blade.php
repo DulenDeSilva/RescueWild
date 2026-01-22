@@ -1,21 +1,27 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <div class="auth-header">
+        <h1 class="auth-title">Create your account</h1>
+        <p class="auth-subtitle">Join the rescue network and keep wildlife safe.</p>
+    </div>
+
+    <form method="POST" action="{{ route('register') }}" class="auth-form">
         @csrf
 
         <!-- User Type Radio Buttons -->
         <div class="mt-4">
-            <x-input-label for="usertype" :value="__('User Type')" />
+            <x-input-label for="usertype" class="auth-label" :value="__('User Type')" />
 
-            <div>
-                <label for="client">
+            <div class="auth-toggle" id="usertype">
+                <label for="client" class="auth-toggle-option">
                     <input type="radio" id="client" name="usertype" value="client" checked>
-                    Client
+                    <span>Client</span>
                 </label>
-                <label for="rescuer" class="ml-4">
+                <label for="rescuer" class="auth-toggle-option">
                     <input type="radio" id="rescuer" name="usertype" value="rescuer">
-                    Rescuer
+                    <span>Rescuer</span>
                 </label>
             </div>
+            <p class="auth-hint">Choose how you want to use RescueWild.</p>
 
             <!-- Display error for usertype -->
             @error('usertype')
@@ -25,8 +31,8 @@
 
         <!-- Name -->
         <div class="mt-4">
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-label for="name" class="auth-label" :value="__('Name')" />
+            <x-text-input id="name" class="block w-full mt-1 auth-input" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Full name" />
 
             <!-- Display error for name -->
             @error('name')
@@ -36,8 +42,8 @@
 
         <!-- Contact Number -->
         <div class="mt-4">
-            <x-input-label for="contact_number" :value="__('Contact Number')" />
-            <x-text-input id="contact_number" class="block w-full mt-1" type="text" name="contact_number" :value="old('contact_number')" required autocomplete="tel" />
+            <x-input-label for="contact_number" class="auth-label" :value="__('Contact Number')" />
+            <x-text-input id="contact_number" class="block w-full mt-1 auth-input" type="text" name="contact_number" :value="old('contact_number')" required autocomplete="tel" placeholder="+94 xx xxx xxxx" />
 
             <!-- Display error for contact_number -->
             @error('contact_number')
@@ -47,8 +53,8 @@
 
         <!-- Email Address -->
         <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-input-label for="email" class="auth-label" :value="__('Email')" />
+            <x-text-input id="email" class="block w-full mt-1 auth-input" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="you@example.com" />
 
             <!-- Display error for email -->
             @error('email')
@@ -58,8 +64,8 @@
 
         <!-- Client Address Field -->
         <div class="mt-4" id="client-address">
-            <x-input-label for="client_address" :value="__('Client Address')" />
-            <x-text-input id="client_address" class="block w-full mt-1" type="text" name="clients_address" :value="old('client_address')"  />
+            <x-input-label for="client_address" class="auth-label" :value="__('Client Address')" />
+            <x-text-input id="client_address" class="block w-full mt-1 auth-input" type="text" name="clients_address" :value="old('client_address')" placeholder="Street, city" />
 
             <!-- Display error for client_address -->
             @error('client_address')
@@ -69,8 +75,8 @@
 
         <!-- Rescuer Location Field -->
         <div class="mt-4" id="rescuer-location" style="display: none;">
-            <x-input-label for="rescuer_location" :value="__('Rescuer Location')" />
-            <x-text-input id="rescuer_location" class="block w-full mt-1" type="text" name="rescuer_location" :value="old('rescuer_location')"  />
+            <x-input-label for="rescuer_location" class="auth-label" :value="__('Rescuer Location')" />
+            <x-text-input id="rescuer_location" class="block w-full mt-1 auth-input" type="text" name="rescuer_location" :value="old('rescuer_location')" placeholder="District or area" />
 
             <!-- Display error for rescuer_location -->
             @error('rescuer_location')
@@ -80,8 +86,8 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block w-full mt-1" type="password" name="passwords" required autocomplete="new-password" />
+            <x-input-label for="password" class="auth-label" :value="__('Password')" />
+            <x-text-input id="password" class="block w-full mt-1 auth-input" type="password" name="passwords" required autocomplete="new-password" placeholder="Create a strong password" />
 
             <!-- Display error for password -->
             @error('password')
@@ -90,12 +96,12 @@
         </div>
 
        
-        <div class="flex items-center justify-end mt-4">
-            <a class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+        <div class="flex items-center justify-end mt-4 auth-actions">
+            <a class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 auth-link" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4">
+            <x-primary-button class="ml-4 auth-button">
                 {{ __('Register') }}
             </x-primary-button>
         </div>

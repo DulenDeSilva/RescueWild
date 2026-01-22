@@ -16,14 +16,14 @@
         <link rel="stylesheet" href="{{ asset('theme.css') }}">
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 theme-root">
-            <div>
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-8 sm:pt-0 px-4 bg-gray-100 theme-root auth-shell">
+            <div class="auth-brand">
                 <a href="/">
-                    <img src = "Screenshot 2024-09-27 014655.png" alt="logo" style = "height:100px; width:auto;">
+                    <img src="Screenshot 2024-09-27 014655.png" alt="logo" class="auth-logo">
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg auth-card">
                 {{ $slot }}
             </div>
         </div>
